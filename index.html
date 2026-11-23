@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ujian Akhir Semester Ganjil – Matematika Kelas X</title>
+<style>
+:root{--bg1:#4f46e5;--bg2:#06b6d4;--card:#fff;--tx:#1e1b4b;--mut:#64748b;--line:#e2e8f0;--pri:#4f46e5;--ok:#10b981;--dbt:#f59e0b;--no:#cbd5e1;--cur:#3b82f6;--bad:#ef4444;--soft:#eef2ff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#312e81;--bg2:#0e7490;--card:#1e2038;--tx:#e8e9ff;--mut:#9aa3c7;--line:#34385c;--soft:#2a2d52;--no:#475079;color-scheme:dark}}
+:root[data-theme="dark"]{--bg1:#312e81;--bg2:#0e7490;--card:#1e2038;--tx:#e8e9ff;--mut:#9aa3c7;--line:#34385c;--soft:#2a2d52;--no:#475079;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100vh;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--tx);background:linear-gradient(135deg,var(--bg1),var(--bg2)) fixed;user-select:none;-webkit-user-select:none}
+.wrap{max-width:1000px;margin:0 auto;padding:16px}
+.card{background:var(--card);border-radius:20px;padding:24px;box-shadow:0 12px 40px rgba(0,0,0,.25)}
+h1{margin:0 0 4px;font-size:1.5rem}h2{margin:0 0 12px}
+.sub{color:var(--mut);margin:0 0 18px}
+.badge{display:inline-block;background:linear-gradient(90deg,#f59e0b,#ef4444);color:#fff;padding:4px 12px;border-radius:99px;font-size:.78rem;font-weight:700;margin-bottom:10px}
+label{display:block;font-size:.85rem;font-weight:600;margin:12px 0 4px}
+input{width:100%;padding:11px 14px;border:2px solid var(--line);border-radius:12px;font-size:1rem;background:var(--card);color:var(--tx);user-select:text;-webkit-user-select:text}
+input:focus{outline:none;border-color:var(--pri)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+.tok{background:var(--soft);border:2px dashed var(--pri);border-radius:14px;padding:12px;margin-top:16px;text-align:center}
+.tok b{font-size:1.6rem;letter-spacing:6px;color:var(--pri);font-family:ui-monospace,monospace}
+.tok small{display:block;color:var(--mut)}
+.btn{border:0;border-radius:12px;padding:12px 20px;font-size:1rem;font-weight:700;cursor:pointer;color:#fff;background:linear-gradient(90deg,var(--bg1),var(--bg2))}
+.btn.full{width:100%;margin-top:18px}.btn.g{background:var(--soft);color:var(--pri)}.btn.y{background:var(--dbt);color:#fff}.btn.r{background:var(--bad)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.rules{background:var(--soft);border-radius:12px;padding:10px 14px;font-size:.85rem;margin-top:14px}.rules ul{margin:4px 0 0;padding-left:18px}
+.err{color:var(--bad);font-weight:600;margin-top:10px;min-height:1.2em}
+.top{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:var(--card);border-radius:16px;padding:12px 18px;margin-bottom:14px;box-shadow:0 6px 20px rgba(0,0,0,.2)}
+.timer{font-family:ui-monospace,monospace;font-size:1.4rem;font-weight:800;background:var(--soft);color:var(--pri);padding:6px 16px;border-radius:12px}
+.timer.low{background:var(--bad);color:#fff;animation:p 1s infinite}@keyframes p{50%{opacity:.6}}
+.main{display:grid;grid-template-columns:1fr 280px;gap:14px}
+@media(max-width:760px){.main{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}}
+.qn{display:inline-block;background:var(--soft);color:var(--pri);font-weight:700;border-radius:99px;padding:3px 12px;font-size:.85rem;margin-bottom:10px}
+.q{font-size:1.15rem;line-height:1.6;margin:0 0 14px}
+.opt{display:flex;gap:12px;align-items:center;padding:12px 14px;border:2px solid var(--line);border-radius:14px;margin-bottom:10px;cursor:pointer;transition:.15s}
+.opt:hover{border-color:var(--pri);background:var(--soft)}
+.opt.sel{border-color:var(--ok);background:rgba(16,185,129,.14)}
+.opt i{font-style:normal;width:30px;height:30px;border-radius:50%;background:var(--soft);color:var(--pri);display:grid;place-items:center;font-weight:800;flex:none}
+.opt.sel i{background:var(--ok);color:#fff}
+.nav{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}.nav .btn{flex:1;min-width:110px}
+.np{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.n{aspect-ratio:1;border:0;border-radius:10px;font-weight:700;cursor:pointer;background:var(--no);color:#1e1b4b}
+.n.a{background:var(--ok);color:#fff}.n.d{background:var(--dbt);color:#fff}.n.c{outline:3px solid var(--cur);outline-offset:2px}
+.leg{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:.78rem;margin:12px 0;color:var(--mut)}.leg span:before{content:"";display:inline-block;width:12px;height:12px;border-radius:4px;margin-right:5px;vertical-align:-1px;background:var(--c)}
+.ov{position:fixed;inset:0;background:rgba(15,10,50,.8);display:none;place-items:center;z-index:99;padding:20px}.ov.on{display:grid}
+.ov .card{max-width:440px;text-align:center}
+.score{font-size:4rem;font-weight:900;background:linear-gradient(90deg,var(--bg1),var(--bg2));-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px;margin:16px 0;text-align:left}
+.info div{background:var(--soft);border-radius:12px;padding:8px 12px;font-size:.9rem}.info small{display:block;color:var(--mut)}
+.rv{border:2px solid var(--line);border-radius:14px;padding:14px;margin-bottom:12px;text-align:left}
+.rv.ok{border-color:var(--ok)}.rv.no{border-color:var(--bad)}.rv.kos{border-color:var(--dbt)}
+.rv .exp{background:var(--soft);border-radius:10px;padding:8px 12px;margin-top:8px;font-size:.92rem}
+.tag{font-size:.75rem;font-weight:800;padding:2px 10px;border-radius:99px;color:#fff;margin-left:6px}
+@media print{body{background:#fff;user-select:text}.noprint{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<section id="s1" class="card" style="max-width:560px;margin:3vh auto">
+  <span class="badge">UAS GANJIL 2026/2027</span>
+  <h1>Ujian Akhir Semester Ganjil</h1>
+  <p class="sub">Matematika Kelas X · 40 soal pilihan ganda · 90 menit</p>
+  <label>Nama Siswa</label><input id="nm" placeholder="Nama lengkap" autocomplete="off">
+  <div class="grid2">
+    <div><label>Kelas</label><input id="kl" placeholder="mis. X-1" autocomplete="off"></div>
+    <div><label>Nomor Peserta Didik</label><input id="np" placeholder="mis. 2026001" autocomplete="off"></div>
+  </div>
+  <label>Asal Sekolah</label><input id="sk" placeholder="Nama sekolah" autocomplete="off">
+  <div class="tok"><small>Token ujian (dari pengawas)</small><b id="tkShow"></b></div>
+  <label>Masukkan Token</label><input id="tkIn" placeholder="Ketik token di atas" maxlength="6" autocomplete="off" style="text-transform:uppercase">
+  <div class="rules"><b>Aturan ujian:</b><ul>
+    <li>Ujian berjalan layar penuh; dilarang membuka tab atau jendela lain.</li>
+    <li>Peringatan kecurangan hanya <b>satu kali</b>. Pelanggaran kedua = ujian otomatis diakhiri.</li>
+    <li>Urutan soal diacak untuk setiap siswa.</li></ul></div>
+  <div class="err" id="er"></div>
+  <button class="btn full" id="go">Mulai Ujian</button>
+</section>
+
+<section id="s2" style="display:none">
+  <div class="top">
+    <div><b id="hN"></b><br><small id="hI" style="color:var(--mut)"></small></div>
+    <div class="timer" id="tm">90:00</div>
+  </div>
+  <div class="main">
+    <div class="card">
+      <span class="qn" id="qn"></span>
+      <p class="q" id="qt"></p>
+      <div id="qo"></div>
+      <div class="nav">
+        <button class="btn g" id="bp">◀ Sebelumnya</button>
+        <button class="btn y" id="bd">Ragu-ragu</button>
+        <button class="btn" id="bx">Selanjutnya ▶</button>
+      </div>
+    </div>
+    <div class="card">
+      <b>Navigasi Soal</b>
+      <div class="leg"><span style="--c:var(--ok)">Dijawab</span><span style="--c:var(--dbt)">Ragu-ragu</span><span style="--c:var(--no)">Belum</span></div>
+      <div class="np" id="npd"></div>
+      <button class="btn r full" id="fin">Selesai Ujian</button>
+    </div>
+  </div>
+</section>
+
+<section id="s3" style="display:none">
+  <div class="card" style="text-align:center">
+    <span class="badge">HASIL UJIAN</span>
+    <h2>Nilai Akhir</h2>
+    <div class="score" id="sc"></div>
+    <p id="sm" class="sub" style="margin-top:8px"></p>
+    <div class="info" id="inf"></div>
+    <p id="cheat" class="err"></p>
+    <button class="btn g noprint" onclick="print()">🖨 Cetak Hasil</button>
+  </div>
+  <h2 style="color:#fff;margin:18px 4px 10px">Jawaban dan Pembahasan</h2>
+  <div id="rvw"></div>
+</section>
+</div>
+
+<div class="ov" id="ovW"><div class="card">
+  <div style="font-size:3rem">⚠️</div><h2>Peringatan Kecurangan!</h2>
+  <p id="wMsg"></p>
+  <p><b>Ini peringatan satu-satunya.</b> Pelanggaran berikutnya akan mengakhiri ujian secara otomatis.</p>
+  <button class="btn full" id="wOk">Saya Mengerti, Lanjutkan</button>
+</div></div>
+<div class="ov" id="ovF"><div class="card">
+  <h2>Akhiri ujian?</h2><p id="fMsg"></p>
+  <div class="nav"><button class="btn g" id="fNo">Kembali</button><button class="btn r" id="fYes">Ya, Kumpulkan</button></div>
+</div></div>
+
+<script>
+const D=`Hasil dari 2³ × 2⁵ ÷ 2⁴ adalah ...~8|16|32|64|4~b~2⁸ ÷ 2⁴ = 2⁴ = 16
+Nilai dari (3²)³ × 3⁻⁴ adalah ...~9|3|6|27|81~a~3⁶ × 3⁻⁴ = 3² = 9
+Bentuk sederhana dari (a³b⁻²)² ÷ (a²b)³ adalah ...~b⁷|a¹²/b⁷|1/b⁵|1/b⁷|a⁶b⁷~d~a⁶b⁻⁴ ÷ a⁶b³ = b⁻⁷ = 1/b⁷
+Nilai dari (1/8)^(−2/3) adalah ...~1/4|2|8|16|4~e~8^(2/3) = (∛8)² = 4
+Nilai x yang memenuhi 2^(x+1) = 32 adalah ...~2|3|4|5|6~c~x + 1 = 5, maka x = 4
+Penyelesaian dari 9^(x−1) = 27^x adalah ...~−2|−1|1|2|3~a~3^(2x−2) = 3^(3x), maka 2x − 2 = 3x, x = −2
+Jumlah semua nilai x yang memenuhi 5^(2x) − 6·5^x + 5 = 0 adalah ...~0|1|2|5|6~b~Misal t = 5ˣ: t² − 6t + 5 = 0, t = 1 atau 5, sehingga x = 0 atau 1. Jumlah = 1
+Bentuk sederhana dari √72 adalah ...~2√6|3√8|4√3|6√2|9√2~d~√(36×2) = 6√2
+Hasil dari √50 + √18 − √8 adalah ...~4√2|5√2|6√2|7√2|8√2~c~5√2 + 3√2 − 2√2 = 6√2
+Bentuk sederhana dari √(7 + 2√10) adalah ...~√7 + √10|√5 + √2|√5 − √2|√7 + √3|2 + √5~b~Jumlah 7, hasil kali 10 (5 dan 2): √5 + √2
+Bentuk rasional dari 6/√3 adalah ...~√3|3√3|6√3|√6|2√3~e~(6/√3)(√3/√3) = 6√3/3 = 2√3
+Bentuk rasional dari 4/(√5 − 1) adalah ...~√5 + 1|√5 − 1|4(√5 + 1)|2√5 + 2|4√5 − 4~a~4(√5+1)/(5−1) = √5 + 1
+Bentuk rasional dari 3/(√7 + √2) adalah ...~(√7 + √2)/5|3(√7 + √2)/5|3(√7 − √2)/9|3(√7 − √2)/5|3(√7 − √2)~d~3(√7−√2)/(7−2) = 3(√7−√2)/5
+Suku ke-10 dari barisan 3, 7, 11, ... adalah ...~35|37|39|41|43~c~U₁₀ = 3 + 9·4 = 39
+Pada barisan aritmatika diketahui U₃ = 10 dan U₇ = 22. Suku ke-20 adalah ...~55|57|59|60|61~e~4b = 12, b = 3, a = 4; U₂₀ = 4 + 19·3 = 61
+Bilangan 101 merupakan suku ke-... dari barisan 2, 5, 8, ...~31|32|33|34|35~d~2 + 3(n−1) = 101, n = 34
+Di antara bilangan 4 dan 28 disisipkan 5 bilangan sehingga membentuk barisan aritmatika. Beda barisan tersebut adalah ...~2|3|4|5|6~c~Ada 7 suku: b = (28−4)/6 = 4
+Suku ke-6 dari barisan 2, 6, 18, ... adalah ...~162|324|432|486|972~d~U₆ = 2·3⁵ = 486
+Pada barisan geometri diketahui U₂ = 6 dan U₅ = 48. Suku ke-7 adalah ...~96|128|256|384|192~e~r³ = 8, r = 2, a = 3; U₇ = 3·2⁶ = 192
+Suku ke-7 dari barisan 81, 27, 9, ... adalah ...~1/27|1/9|1/3|1/81|1/243~b~U₇ = 81·(1/3)⁶ = 1/9
+Jumlah dari 2 + 4 + 6 + ... + 20 adalah ...~100|110|120|210|220~b~S₁₀ = 10/2 (2 + 20) = 110
+Jumlah n suku pertama suatu deret adalah Sₙ = n² + 3n. Suku ke-5 deret tersebut adalah ...~8|10|11|12|14~d~U₅ = S₅ − S₄ = 40 − 28 = 12
+Jumlah 20 suku pertama dari deret 5 + 8 + 11 + ... adalah ...~670|610|620|650|700~a~U₂₀ = 62; S₂₀ = 10(5 + 62) = 670
+Jumlah semua bilangan asli kelipatan 3 yang kurang dari 100 adalah ...~1.584|1.683|1.700|1.650|1.735~b~3, 6, ..., 99 (33 suku): S = 33/2 (3 + 99) = 1.683
+Jumlah 6 suku pertama dari 3 + 6 + 12 + ... adalah ...~93|192|378|381|189~e~S₆ = 3(2⁶ − 1)/(2 − 1) = 189
+Deret geometri dengan suku pertama 2 dan rasio 3 memiliki jumlah n suku pertama 242. Nilai n adalah ...~4|5|6|7|3~b~2(3ⁿ − 1)/2 = 242, 3ⁿ = 243, n = 5
+Jumlah 4 suku pertama dari deret 1 − 2 + 4 − 8 + ... adalah ...~−15|−9|−5|5|15~c~r = −2: S₄ = (1 − 16)/(1 + 2) = −5
+Jumlah deret tak hingga 8 + 4 + 2 + 1 + ... adalah ...~16|12|14|18|32~a~S∞ = 8/(1 − 1/2) = 16
+Suatu deret geometri tak hingga memiliki suku pertama 6 dan jumlah 9. Rasio deret tersebut adalah ...~1/6|1/4|1/3|1/2|2/3~c~9 = 6/(1 − r), 1 − r = 2/3, r = 1/3
+Sebuah bola dijatuhkan dari ketinggian 10 m dan memantul kembali setiap kali dengan ketinggian 3/5 dari tinggi sebelumnya. Panjang seluruh lintasan bola sampai berhenti adalah ... m.~25|30|35|40|50~d~Lintasan = 10 + 2·[6/(1 − 3/5)] = 10 + 2·15 = 40 m
+Nilai sin 150° adalah ...~−1/2|√3/2|−√3/2|1|1/2~e~sin 150° = sin(180° − 30°) = 1/2
+Nilai cos 240° adalah ...~−1/2|1/2|√3/2|−√3/2|−1~a~cos 240° = −cos 60° = −1/2
+Nilai tan 315° adalah ...~−√3|−√3/3|1|−1|√3~d~tan 315° = −tan 45° = −1
+Nilai sin 30° · cos 60° + cos 30° · sin 60° adalah ...~1/2|3/4|1|√3/2|5/4~c~1/2·1/2 + √3/2·√3/2 = 1/4 + 3/4 = 1
+Nilai sin² 60° + cos² 30° − tan² 45° adalah ...~0|1/2|1/4|1|3/2~b~3/4 + 3/4 − 1 = 1/2
+Nilai (cos 60° · tan 60°) ÷ sin 30° adalah ...~1/2|1|√3/2|√3|2√3~d~(1/2 · √3) ÷ 1/2 = √3
+Pada segitiga siku-siku, sisi depan sudut θ adalah 3 dan sisi miringnya 5. Nilai cos θ adalah ...~4/5|3/5|3/4|5/4|5/3~a~Sisi samping = √(25 − 9) = 4, maka cos θ = 4/5
+Jika tan θ = 5/12 dengan θ lancip, maka nilai sin θ adalah ...~12/13|13/12|5/13|13/5|7/13~c~Sisi miring = √(25 + 144) = 13, maka sin θ = 5/13
+Sebuah tangga sepanjang 6 m bersandar pada dinding dan membentuk sudut 60° dengan tanah. Tinggi dinding yang dicapai tangga adalah ... m.~3|3√2|6|6√3|3√3~e~Tinggi = 6 sin 60° = 3√3
+Dari jarak 12√3 m dari kaki sebuah menara, sudut elevasi puncak menara adalah 30°. Tinggi menara adalah ... m.~12|6|12√3|18|24~a~Tinggi = 12√3 · tan 30° = 12√3 · (√3/3) = 12 m`.split("\n").map(l=>{const p=l.split("~");return{q:p[0],o:p[1].split("|"),k:"abcde".indexOf(p[2]),e:p[3]}});
+const $=id=>document.getElementById(id),L="ABCDE",DUR=90*60;
+const TOKEN=Math.random().toString(36).slice(2,8).toUpperCase();$("tkShow").textContent=TOKEN;
+let P={},order=[],cur=0,ans={},dbt={},left=DUR,iv=null,running=false,viol=0,last=0,reason="";
+const show=id=>["s1","s2","s3"].forEach(s=>$(s).style.display=s==id?"block":"none");
+
+$("go").onclick=()=>{
+  P={n:$("nm").value.trim(),k:$("kl").value.trim(),p:$("np").value.trim(),s:$("sk").value.trim()};
+  if(!P.n||!P.k||!P.p||!P.s)return $("er").textContent="Lengkapi semua data peserta.";
+  if($("tkIn").value.trim().toUpperCase()!==TOKEN)return $("er").textContent="Token salah. Periksa kembali.";
+  order=D.map((_,i)=>i);for(let i=order.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[order[i],order[j]]=[order[j],order[i]]}
+  $("hN").textContent=P.n;$("hI").textContent=`Kelas ${P.k} · No. ${P.p} · ${P.s}`;
+  try{document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen().catch(()=>{})}catch(e){}
+  running=true;last=Date.now()+1500;show("s2");draw();tick();iv=setInterval(tick,1000);
+};
+function tick(){
+  const m=Math.floor(left/60),s=left%60;$("tm").textContent=String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");
+  $("tm").classList.toggle("low",left<=300);
+  if(left--<=0){finish("Waktu habis.")}
+}
+function draw(){
+  const q=D[order[cur]];
+  $("qn").textContent=`Soal ${cur+1} dari ${D.length}`;$("qt").textContent=q.q;
+  $("qo").innerHTML=q.o.map((t,i)=>`<div class="opt ${ans[order[cur]]===i?"sel":""}" data-i="${i}"><i>${L[i]}</i><span>${t}</span></div>`).join("");
+  $("qo").querySelectorAll(".opt").forEach(e=>e.onclick=()=>{ans[order[cur]]=+e.dataset.i;draw()});
+  $("bp").disabled=cur==0;$("bx").textContent=cur==D.length-1?"Selesai ✔":"Selanjutnya ▶";
+  $("bd").textContent=dbt[order[cur]]?"✓ Batalkan Ragu":"Ragu-ragu";
+  $("npd").innerHTML=order.map((o,i)=>`<button class="n ${dbt[o]?"d":ans[o]!==undefined?"a":""} ${i==cur?"c":""}" data-i="${i}">${i+1}</button>`).join("");
+  $("npd").querySelectorAll(".n").forEach(e=>e.onclick=()=>{cur=+e.dataset.i;draw()});
+}
+$("bp").onclick=()=>{if(cur>0){cur--;draw()}};
+$("bx").onclick=()=>{if(cur<D.length-1){cur++;draw()}else askFinish()};
+$("bd").onclick=()=>{dbt[order[cur]]=!dbt[order[cur]];draw()};
+$("fin").onclick=askFinish;
+function askFinish(){
+  const a=Object.keys(ans).length,d=Object.values(dbt).filter(Boolean).length;
+  $("fMsg").textContent=`Terjawab ${a} dari ${D.length} soal. Belum dijawab: ${D.length-a}. Ragu-ragu: ${d}. Setelah dikumpulkan, jawaban tidak dapat diubah.`;
+  $("ovF").classList.add("on");
+}
+$("fNo").onclick=()=>$("ovF").classList.remove("on");
+$("fYes").onclick=()=>finish("");
+
+/* ===== Anti curang ===== */
+function violation(r){
+  if(!running||Date.now()-last<1500)return;
+  last=Date.now();viol++;
+  if(viol===1){$("wMsg").textContent="Terdeteksi: "+r+".";$("ovW").classList.add("on")}
+  else finish("Ujian dihentikan otomatis karena pelanggaran kedua ("+r+").");
+}
+$("wOk").onclick=()=>{$("ovW").classList.remove("on");last=Date.now();try{document.documentElement.requestFullscreen().catch(()=>{})}catch(e){}};
+document.addEventListener("visibilitychange",()=>{if(document.hidden)violation("berpindah tab / membuka jendela lain")});
+window.addEventListener("blur",()=>violation("meninggalkan jendela ujian"));
+document.addEventListener("fullscreenchange",()=>{if(!document.fullscreenElement)violation("keluar dari layar penuh")});
+["contextmenu","copy","cut","paste","dragstart"].forEach(e=>document.addEventListener(e,ev=>{if(running)ev.preventDefault()}));
+document.addEventListener("keydown",e=>{if(!running)return;const k=e.key.toLowerCase();
+  if(e.key=="F12"||e.key=="PrintScreen"||((e.ctrlKey||e.metaKey)&&["c","v","x","u","p","s","a"].includes(k))||(e.ctrlKey&&e.shiftKey&&["i","j","c"].includes(k)))e.preventDefault()});
+window.addEventListener("beforeunload",e=>{if(running){e.preventDefault();e.returnValue=""}});
+
+/* ===== Hasil ===== */
+function finish(why){
+  if(!running)return;running=false;clearInterval(iv);reason=why;
+  $("ovF").classList.remove("on");$("ovW").classList.remove("on");
+  try{document.fullscreenElement&&document.exitFullscreen()}catch(e){}
+  let b=0,s=0,k=0;order.forEach(o=>{ans[o]===undefined?k++:ans[o]===D[o].k?b++:s++});
+  const nilai=Math.round(b/D.length*1000)/10;
+  $("sc").textContent=nilai;$("sm").textContent=`Benar ${b} · Salah ${s} · Kosong ${k} dari ${D.length} soal`;
+  $("inf").innerHTML=[["Nama",P.n],["Kelas",P.k],["No. Peserta Didik",P.p],["Asal Sekolah",P.s]].map(x=>`<div><small>${x[0]}</small><b>${x[1].replace(/</g,"&lt;")}</b></div>`).join("");
+  $("cheat").textContent=why;
+  $("rvw").innerHTML=order.map((o,i)=>{const q=D[o],a=ans[o],st=a===undefined?"kos":a===q.k?"ok":"no",lb={kos:"Kosong",ok:"Benar",no:"Salah"}[st],cl={kos:"var(--dbt)",ok:"var(--ok)",no:"var(--bad)"}[st];
+    return `<div class="rv ${st}" style="background:var(--card)"><b>${i+1}. ${q.q}</b><span class="tag" style="background:${cl}">${lb}</span>
+    <p style="margin:8px 0 0">Jawaban kamu: <b>${a===undefined?"—":L[a]+". "+q.o[a]}</b><br>Kunci jawaban: <b style="color:var(--ok)">${L[q.k]}. ${q.o[q.k]}</b></p>
+    <div class="exp">💡 <b>Pembahasan:</b> ${q.e}</div></div>`}).join("");
+  show("s3");scrollTo(0,0);
+}
+</script>
+</body>
+</html>
